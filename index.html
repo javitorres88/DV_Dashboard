@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore Gapminder's historical data on life expectancy, income and population.">
+<title>Economic Prosperity and Population Health in the Americas</title>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+<script src="dashboard.js" defer></script>
+</head>
+<body>
+<main class="wrap">
+<section class="intro">
+<div><p class="eyebrow">THE AMERICAS IN DATA <span></span> 1952–2007</p><h1>Economic Prosperity and Population Health in the Americas</h1><p class="lead">Explore life expectancy, income and population across 25 countries in the Americas.</p></div>
+<details class="country-filter" id="country-filter">
+  <summary>Countries <span id="country-selection">All countries</span></summary>
+  <div class="country-menu">
+    <button id="reset-countries" type="button" disabled>Show all countries</button>
+    <fieldset id="country-options"><legend class="visually-hidden">Countries to compare</legend></fieldset>
+  </div>
+</details>
+</section>
+<section id="headlines" class="headlines" aria-label="Four key findings" aria-live="polite"></section>
+<section class="charts" aria-label="Five Gapminder charts">
+<article class="panel wide"><header><h2>Income and life expectancy</h2><p>Color identifies each country. Bubble area represents population.</p></header><div id="scatter" class="plot"></div>
+<div class="timeline"><label for="year">Year <output id="year-value" for="year">2007</output></label><input id="year" type="range" min="1952" max="2007" step="5" value="2007"><div class="range-endpoints" aria-hidden="true"><span>1952</span><span>2007</span></div></div></article>
+<article class="panel"><header><h2 id="rank-title">Longest life expectancy</h2><p id="rank-description">Top eight countries in the selected year</p></header><div id="rank" class="plot"></div></article>
+<article class="panel"><header><h2 id="income-title">Highest GDP per capita</h2><p id="income-description">Top eight countries in the selected year</p></header><div id="income" class="plot"></div></article>
+<article class="panel"><header><h2>Life expectancy improvement</h2><p id="improvement-description"></p></header><div id="life" class="plot"></div></article>
+<article class="panel"><header><h2>GDP per capita distribution</h2><p>Number of countries in each $5,000 range</p></header><div id="distribution" class="plot"></div></article>
+</section>
+<footer><span>Source · Gapminder historical excerpt</span><span>Observations every five years · GDP per capita in inflation-adjusted US dollars</span></footer>
+</main>
+<div id="tooltip" role="tooltip" hidden></div>
+</body>
+</html>
